@@ -1,20 +1,31 @@
-*Warning: cmus is not actively maintained. For details, please see [#856](https://github.com/cmus/cmus/issues/856)*
 
-cmus — C\* Music Player
-=======================
+rofmus — Music Player
+=====================
 
-https://cmus.github.io/
+a simple fork of cmus — C\* Music Player
+https://github.com/cmus/cmus
 
-[![Build Status](https://travis-ci.org/cmus/cmus.svg?branch=master)](https://travis-ci.org/cmus/cmus)
+Install from source
+-------------------
+Clone this project with
 
-Copyright © 2004-2008 Timo Hirvonen <tihirvon@gmail.com>
+    $ git clone https://github.com/roflcoffel/cmus.git
 
-Copyright © 2008-2017 Various Authors
+Auto-detect configuration
+
+    $ ./configure
+
+Build the project
+
+    $ make
+
+Install
+
+    $ make install
 
 
-Configuration
--------------
-
+Detailed Configuration
+----------------------
 List available optional features
 
     $ ./configure --help
@@ -50,10 +61,6 @@ Building
 
     $ make
 
-Or on some BSD systems you need to explicitly use GNU make:
-
-    $ gmake
-
 
 Installation
 ------------
@@ -66,9 +73,6 @@ Or to install to a temporary directory:
 
 This is useful when creating binary packages.
 
-Remember to replace `make` with `gmake` if needed.
-
-
 Manuals
 -------
 
@@ -79,43 +83,14 @@ And
     $ man cmus
 
 
-Mailing List
-------------
-
-To subscribe to cmus-devel@lists.sourceforge.net or view the archive visit
-http://lists.sourceforge.net/lists/listinfo/cmus-devel.
-
-The mailing list now serves as an archive for old releases and issues.
-Please use the github [issues](https://github.com/cmus/cmus/issues)
-page for any problems, suggestions, or bug reports.
-
-
 Reporting Bugs
 --------------
+*Warning: cmus is not actively maintained. For details, please see [#856](https://github.com/cmus/cmus/issues/856)*
 
-Bugs should be reported using the Github [issue tracker](https://github.com/cmus/cmus/issues).
-When creating a new issue, a template will be shown containing instructions on how to collect
-the necessary information.
+Firstly search for any existing issues at cmus [issues](https://github.com/cmus/cmus/issues).
+if you can't find your problem or bug then create one at rofmus [issues](https://github.com/roflcoffel/cmus/issues).
 
 Additional debug information can be found in `~/cmus-debug.txt` if you configured cmus with
 maximum debug level (`./configure DEBUG=2`). In case of a crash the last lines may be helpful.
 
-
-Git Repository
---------------
-
-https://github.com/cmus/cmus
-
-    $ git clone https://github.com/cmus/cmus.git
-
-
-Hacking
--------
-
-cmus uses the [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html).
-Use hard tabs.  Tabs are _always_ 8 characters wide.  Keep the style consistent with rest of the
-code.
-
-Bug fixes and implementations of new features should be suggested as a
-[pull request](https://github.com/cmus/cmus/pulls) directly on Github.
 

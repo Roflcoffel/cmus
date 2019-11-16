@@ -1920,7 +1920,7 @@ static int get_window_size(int *lines, int *columns)
 
 static void resize_tree_view(int w, int h)
 {
-	tree_win_w = w / 3;
+	tree_win_w = w / 5; //Antes change from 3 to 5
 	track_win_w = w - tree_win_w - 1;
 	if (tree_win_w < 8)
 		tree_win_w = 8;
