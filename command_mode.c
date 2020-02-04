@@ -1342,6 +1342,17 @@ static void cmd_version(char *arg)
 	info_msg(VERSION);
 }
 
+static void cmd_view_resize(char *arg)
+{
+	int num = atoi(arg);
+
+	if (num > 9) {
+		info_msg(":view-resize require a number between 1 and 9");
+	} else {
+		set_view_size(num);
+	}
+}
+
 static void cmd_view(char *arg)
 {
 	int view;
@@ -2591,6 +2602,7 @@ struct command commands[] = {
 	{ "pwd",                   cmd_pwd,              0, 0,  NULL,                 0, 0          },
 	{ "raise-vte",             cmd_raise_vte,        0, 0,  NULL,                 0, 0          },
 	{ "rand",                  cmd_rand,             0, 0,  NULL,                 0, 0          },
+	{ "resize-view",           cmd_view_resize,      1, 1,  NULL,                 0, 0          },
 	{ "quit",                  cmd_quit,             0, 1,  NULL,                 0, 0          },
 	{ "refresh",               cmd_refresh,          0, 0,  NULL,                 0, 0          },
 	{ "run",                   cmd_run,              1, -1, expand_program_paths, 0, CMD_UNSAFE },

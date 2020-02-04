@@ -7,7 +7,11 @@ https://github.com/cmus/cmus
 
 Changes from the original
 ---------------------
-The ablum and playlist views are smaller
+The ablum and playlist views are smaller.
+
+Can be changed with the cmus command :resize-view <num>  
+a larger number will make the playlist view larger.
+
 
 Install from source
 -------------------

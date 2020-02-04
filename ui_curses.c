@@ -101,6 +101,7 @@ char *play_queue_filename = NULL;
 char *play_queue_ext_filename = NULL;
 char *charset = NULL;
 int using_utf8 = 0;
+int view_size = 5;
 
 /* ------------------------------------------------------------------------- */
 
@@ -150,6 +151,8 @@ static int cursor_y;
 static const int default_esc_delay = 25;
 
 static char *title_buf = NULL;
+
+
 
 enum {
 	CURSED_WIN,
@@ -1898,7 +1901,7 @@ static int get_window_size(int *lines, int *columns)
 
 static void resize_tree_view(int w, int h)
 {
-	tree_win_w = w / 5;
+	tree_win_w = w / view_size;
 	track_win_w = w - tree_win_w - 1;
 	if (tree_win_w < 8)
 		tree_win_w = 8;
@@ -1910,6 +1913,16 @@ static void resize_tree_view(int w, int h)
 	h--;
 	window_set_nr_rows(lib_tree_win, h);
 	window_set_nr_rows(lib_track_win, h);
+}
+
+void set_view_size(int size)
+{
+	view_size = size;
+
+	if(size == 0)
+		view_size = 1;
+	
+	needs_to_resize = 1;
 }
 
 static void update(void)

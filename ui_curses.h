@@ -63,6 +63,7 @@ void error_msg(const char *format, ...) CMUS_FORMAT(1, 2);
 enum ui_query_answer yes_no_query(const char *format, ...) CMUS_FORMAT(1, 2);
 void search_not_found(void);
 void set_view(int view);
+void set_view_size(int size);
 void set_client_fd(int fd);
 int get_client_fd(void);
 void enter_command_mode(void);
